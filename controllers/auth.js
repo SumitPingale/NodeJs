@@ -33,6 +33,7 @@ exports.signup = (req, res, next) => {
       return user.save();
     })
     .then((result) => {
+      console.log("revert branvh");
       res.status(201).json({ message: "User created!", userId: result._id });
     })
     .catch((err) => {
