@@ -22,6 +22,7 @@ exports.signup = (req, res, next) => {
   bcrypt
     .hash(password, 12)
     .then((hashedPw) => {
+      console.log("chenged to check revirts");
       const user = new User({
         email: email,
         password: hashedPw,
