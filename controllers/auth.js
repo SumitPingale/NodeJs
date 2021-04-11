@@ -22,7 +22,6 @@ exports.signup = (req, res, next) => {
   bcrypt
     .hash(password, 12)
     .then((hashedPw) => {
-      console.log("chenged to check revirts");
       const user = new User({
         email: email,
         password: hashedPw,
@@ -34,6 +33,7 @@ exports.signup = (req, res, next) => {
       return user.save();
     })
     .then((result) => {
+      console.log("revert branvh");
       res.status(201).json({ message: "User created!", userId: result._id });
     })
     .catch((err) => {
